@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "880154669907",
+    "project_id": "chok-e-chat",
+    "storage_bucket": "chok-e-chat.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880154669907:android:569d9608f6062080f8a7a6",
+        "android_client_info": {
+          "package_name": "com.example.echat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKdXywZz9MoJ4ZHgvGyBphHHDGJ9WQTuw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
