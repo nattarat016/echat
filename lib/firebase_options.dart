@@ -71,4 +71,5 @@ class DefaultFirebaseOptions {
     authDomain: 'chok-e-chat.firebaseapp.com',
     storageBucket: 'chok-e-chat.firebasestorage.app',
   );
+
 }

@@ -35,7 +35,7 @@ class _RegistryScreenState extends State<RegistryScreen> {
             const SizedBox(height: 15,),
             const TextInput(
               hintText: "Enter Password",
-              keyboardType: TextInputType.emailAddress,
+              keyboardType: TextInputType.visiblePassword,
               obscureText: true,
             ),
             Padding(
