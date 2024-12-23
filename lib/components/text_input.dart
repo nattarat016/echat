@@ -1,23 +1,28 @@
+import 'package:echat/datas/input_with_error_text.dart';
 import 'package:flutter/material.dart';
 
 class TextInput extends StatelessWidget {
   final String hintText;
   final bool obscureText;
   final TextInputType keyboardType;
-  final void Function(String)? onChanged;
+  // final void Function(String)? onChanged;
+  final InputWithErrorText inputWithErrorText;
   const TextInput(
       {super.key,
       this.obscureText = false,
       this.keyboardType = TextInputType.text,
       this.hintText = "Enter somthing",
-      this.onChanged});
+      // this.onChanged,
+      required this.inputWithErrorText});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       keyboardType: keyboardType,
       obscureText: obscureText,
-      onChanged: onChanged,
+      onChanged: (value){
+        inputWithErrorText.valueText = value;
+      },
       decoration: InputDecoration(
         hintText: hintText,
         // errorText: 'Invalid',
@@ -31,6 +36,7 @@ class TextInput extends StatelessWidget {
           borderSide: BorderSide(color: Colors.blueAccent, width: 2.0),
           borderRadius: BorderRadius.all(Radius.circular(5.0)),
         ),
+        errorText: inputWithErrorText.errorText,
       ),
     );
   }

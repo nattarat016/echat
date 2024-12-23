@@ -1,10 +1,15 @@
+import 'package:echat/firebase_options.dart';
 import 'package:echat/screens/chat_screen.dart';
 import 'package:echat/screens/main_screen.dart';
 import 'package:echat/screens/registry_screen.dart';
 import 'package:echat/screens/sign_in_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+Future<void> main() async {
+  await Firebase.initializeApp(
+  options: DefaultFirebaseOptions.currentPlatform,
+);
   runApp(const MyApp());
 }
 
