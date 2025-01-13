@@ -39,6 +39,7 @@ dependencies:
   firebase_auth: ^5.3.4
   cloud_firestore: ^5.6.0
   flutter_progress_hud: ^2.0.2
+  intl: ^0.20.1
 
 dev_dependencies:
   flutter_test:

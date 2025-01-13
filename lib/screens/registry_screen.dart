@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:echat/components/text_input.dart';
 import 'package:echat/datas/input_with_error_text.dart';
 import 'package:echat/screens/chat_screen.dart';
@@ -63,7 +65,7 @@ class _RegistryScreenState extends State<RegistryScreen> {
                   hintText: "Enter Password",
                   keyboardType: TextInputType.visiblePassword,
                   obscureText: true,
-                  inputWithErrorText: email,
+                  inputWithErrorText: password,
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
@@ -84,7 +86,7 @@ class _RegistryScreenState extends State<RegistryScreen> {
                                 email: email.valueText,
                                 password: password.valueText);
                         if (userCredential.user != null) {
-                          // ignore: use_build_context_synchronously
+                          if (!context.mounted) return;
                           Navigator.pushNamed(context, ChatScreen.id);
                         }
                       } on FirebaseAuthException catch (e) {
@@ -94,8 +96,11 @@ class _RegistryScreenState extends State<RegistryScreen> {
                         } else if (e.code == 'email-already-in-use') {
                           email.errorText = 'Email already in use';
                         } else {
-                          password.errorText = e.toString();
+                          email.errorText = e.toString();
                         }
+                        setState(() {
+                          progress?.dismiss();
+                        });
                       }
                       setState(() {
                         progress?.dismiss();

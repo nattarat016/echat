@@ -91,12 +91,11 @@ class _SignInScreenState extends State<SignInScreen> {
                           email.errorText = 'User not found';
                         } else if (e.code == 'wrong-password') {
                           password.errorText = 'wrong-password';
-                        } else if(e.code == 'invalid-email'){
+                        } else if (e.code == 'invalid-email') {
                           log(email.errorText.toString());
                           email.errorText = 'invalid-email';
                           log(email.errorText.toString());
                         } else {
-                          log('dsf');
                           password.errorText = e.toString();
                         }
                       }
